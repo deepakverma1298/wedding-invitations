@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Deepak & Bhagyshree — Wedding Invitation</title>
+<meta name="description" content="The wedding invitation of Deepak and Bhagyshree — 25 November 2026.">
+<style>
+*{box-sizing:border-box}html,body{margin:0;padding:0;background:#120b08;color:#f8eee2;font-family:Georgia,'Times New Roman',serif}body{min-height:100vh}.page{min-height:100vh;display:grid;place-items:center;padding:28px;background:radial-gradient(circle at 50% 20%,#5b3420 0,#21130d 40%,#0d0806 100%)}.card{width:min(920px,100%);min-height:calc(100vh - 56px);border:1px solid #caa46a;border-radius:28px;padding:34px;display:flex;flex-direction:column;justify-content:space-between;gap:32px;background:linear-gradient(180deg,rgba(52,24,14,.96),rgba(16,9,7,.98));box-shadow:0 24px 80px rgba(0,0,0,.45)}.top{display:flex;justify-content:flex-end}.toggle{border:1px solid #caa46a;background:rgba(202,164,106,.1);color:#f6e5c7;border-radius:999px;padding:10px 14px;cursor:pointer}.hero{text-align:center;padding:40px 10px}.eyebrow{letter-spacing:.28em;text-transform:uppercase;font-size:12px;color:#d8bc8a}.names{font-size:clamp(48px,8vw,88px);line-height:.95;margin:20px 0 14px;font-weight:500}.amp{color:#d9b56e}.date{font-size:clamp(18px,3vw,28px);color:#f1d8ad}.orn{width:160px;height:2px;background:#caa46a;margin:24px auto;box-shadow:0 0 0 1px rgba(202,164,106,.2)}.copy{max-width:630px;margin:0 auto;color:#e6d2bb;line-height:1.7;font-size:17px}.events{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:12px}.event{border:1px solid rgba(202,164,106,.5);border-radius:18px;padding:16px;text-align:center;background:rgba(255,255,255,.03)}.event b{display:block;color:#e7c98f;margin-bottom:5px}.footer{text-align:center;color:#bea88d;font-size:13px;line-height:1.6}.music{display:none}
+</style>
+</head>
+<body>
+<div class="page"><main class="card"><div class="top"><button class="toggle" id="lang" aria-label="Switch language">हिंदी</button></div><section class="hero"><div class="eyebrow" id="eyebrow">A Wedding Celebration</div><h1 class="names"><span id="groom">Deepak</span> <span class="amp">&</span> <span id="bride">Bhagyshree</span></h1><div class="date" id="date">25 November 2026</div><div class="orn"></div><p class="copy" id="copy">With the blessings of our families, we invite you to celebrate our wedding and share in the joy of a beautiful new beginning.</p></section><section class="events" id="events"></section><div class="footer" id="venue">Nandi Hills Resort, Betma / Pithampur<br><span id="note">Your presence will make our celebration complete.</span></div></main></div>
+<audio class="music" id="music" loop preload="auto" src="https://d2ol7oe51mr4n9.cloudfront.net/user_3JRl282WKRIvXlvG4w14T8uj9hj/ef1b1643-c898-4fed-8d34-50be00df51ec.mp3"></audio>
+<script>
+const en={eyebrow:'A Wedding Celebration',copy:'With the blessings of our families, we invite you to celebrate our wedding and share in the joy of a beautiful new beginning.',venue:'Nandi Hills Resort, Betma / Pithampur',note:'Your presence will make our celebration complete.',events:[['Haldi','25 Nov'],['Mehndi','25 Nov'],['Sangeet','25 Nov'],['Engagement','25 Nov'],['Barat','25 Nov'],['Wedding / Pheras','25 Nov'],['Reception','25 Nov']]};
+const hi={eyebrow:'विवाह समारोह',copy:'परिवार के आशीर्वाद के साथ, हम आपको हमारे विवाह समारोह में सादर आमंत्रित करते हैं। आइए, हमारे जीवन की इस नई शुरुआत की खुशियाँ साथ मिलकर मनाएँ।',venue:'नंदी हिल्स रिज़ॉर्ट, बेटमा / पीथमपुर',note:'आपकी उपस्थिति हमारे उत्सव को पूर्ण बनाएगी।',events:[['हल्दी','25 नव॰'],['मेहंदी','25 नव॰'],['संगीत','25 नव॰'],['सगाई','25 नव॰'],['बारात','25 नव॰'],['विवाह / फेरे','25 नव॰'],['रिसेप्शन','25 नव॰']]};
+let lang='en';
+function render(){const d=lang==='en'?en:hi;document.documentElement.lang=lang;document.getElementById('eyebrow').textContent=d.eyebrow;document.getElementById('copy').textContent=d.copy;document.getElementById('venue').firstChild.textContent=d.venue+'\n';document.getElementById('note').textContent=d.note;document.getElementById('lang').textContent=lang==='en'?'हिंदी':'English';document.getElementById('events').innerHTML=d.events.map(e=>`<div class="event"><b>${e[0]}</b><span>${e[1]} 2026</span></div>`).join('')}
+document.getElementById('lang').onclick=()=>{const x=document.createElement('div');x.style.cssText='position:fixed;inset:0;background:#100906cc;backdrop-filter:blur(8px);display:grid;place-items:center;z-index:10;color:#f4dfb6;font-size:clamp(26px,7vw,64px);text-align:center;transition:opacity .5s';x.textContent=lang==='en'?'शुभ विवाह ✨':'Wedding Celebration ✨';document.body.append(x);setTimeout(()=>{lang=lang==='en'?'hi':'en';render()},450);setTimeout(()=>{x.style.opacity='0';setTimeout(()=>x.remove(),500)},700)};
+render();
+const a=document.getElementById('music');document.addEventListener('pointerdown',()=>a.play().catch(()=>{}),{once:true});
+</script>
+</body>
+</html>
